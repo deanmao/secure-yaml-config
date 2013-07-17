@@ -11,8 +11,7 @@
         "js-yaml": "",
         "coffee-script": "",
         "underscore": "",
-        "ursa": "",
-        "async": ""
+        "ursa": ""
     },
     "devDependencies": {
       "mocha": "",
