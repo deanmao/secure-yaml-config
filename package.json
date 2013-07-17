@@ -1,7 +1,12 @@
 {
     "name": "yaml-config",
-    "version": "0.0.0",
-    "description": "",
+    "version": "0.0.1",
+    "author": "Dean Mao <deanmao@gmail.com",
+    "description": "YAML based configuration file management with support for public key encryption for values",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/deanmao/yaml-config.git"
+    },
     "dependencies": {
         "js-yaml": "",
         "coffee-script": "",
