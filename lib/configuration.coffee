@@ -35,7 +35,7 @@ class Configuration
   walk: (obj) ->
     if _.isArray(obj)
       _.map obj, (value) =>
-        @walk(obj)
+        @walk(value)
     else if _.isObject(obj)
       _.each obj, (value, key) =>
         obj[key] = @walk(value)

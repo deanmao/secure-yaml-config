@@ -47,3 +47,9 @@ describe 'configuration', ->
     c2 = createConfiguration(__dirname + '/example3.yml', 'production')
     c2.config.fruit.should.equal("orange")
     done()
+
+  it 'should handle a complicated yaml file', (done) ->
+    c = createConfiguration(__dirname + '/big_config.yml', 'production')
+    c.config.host.should.equal("my-live-site.com")
+    c.config.files[3].should.equal("orange")
+    done()
