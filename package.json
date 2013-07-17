@@ -16,7 +16,6 @@
     },
     "devDependencies": {
       "mocha": "",
-      "supertest": "",
       "sinon": "",
       "chai": "",
       "sinon-chai": "",
