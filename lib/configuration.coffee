@@ -11,7 +11,7 @@ class Configuration
     (hasAllRequired = hasAllRequired + @options[option]) for option in requiredOptions
     if hasAllRequired
       if @options.watch
-        fs.watch @options.configFile, (event, filename) ->
+        fs.watch @options.configFile, (event, filename) =>
           config = @readConfig()
           if _.isFunction(@options.watch)
             @options.watch(null, config)
