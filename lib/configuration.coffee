@@ -12,7 +12,9 @@ class Configuration
     if hasAllRequired
       if @options.watch
         fs.watch @options.configFile, (event, filename) ->
-          @readConfig()
+          config = @readConfig()
+          if _.isFunction(@options.watch)
+            @options.watch(null, config)
       keyFile = @options.publicKeyFile
       unless fs.existsSync(keyFile)
         console.log("public key missing, so generating one at: #{keyFile}")
@@ -28,6 +30,7 @@ class Configuration
     if @options.env && config[@options.env]
       config = config[@options.env]
     @config = @walk(config)
+    return @config
 
   walk: (obj) ->
     if _.isArray(obj)
