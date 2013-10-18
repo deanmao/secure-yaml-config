@@ -83,7 +83,10 @@ class Configuration
       unless fs.existsSync(file)
         throw new Error("cannot decrypt data because private key is missing: #{file}")
       @privateKey = ursa.createPrivateKey(fs.readFileSync(@options.privateKeyFile))
-    @privateKey.decrypt(data).toString()
+    try
+      @privateKey.decrypt(data).toString()
+    catch err
+      "ERROR: invalid key"
 
 module.exports = Configuration
 

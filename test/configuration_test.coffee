@@ -41,6 +41,11 @@ describe 'configuration', ->
     c.config.fruit.lemon.should.equal('lemon')
     done()
 
+  it 'should safely handle stuff with bad keys', (done) ->
+    c = createConfiguration(__dirname + '/invalid_key.yml')
+    c.config.fruit.apple.should.equal('ERROR: invalid key')
+    done()
+
   it 'should choose the right environment config', (done) ->
     c = createConfiguration(__dirname + '/example3.yml', 'development')
     c.config.fruit.should.equal("apple")
